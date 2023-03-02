@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:20.04
 
 ENV JAVA_HOME=/opt/jdk
 ENV PATH=$PATH:/opt/jdk/bin:/opt/maven/bin
@@ -43,7 +43,7 @@ RUN wget -q https://github.com/GrokImageCompression/grok/releases/download/v7.6.
     && tar xfz openjdk-18_linux-x64_bin.tar.gz \
     && mv jdk-18 /opt/jdk \
     # Install a newer Maven than the one in apt
-    && wget -q https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz \
+    && wget -q https://archive.apache.org/dist/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz \
     && tar xfz apache-maven-3.8.5-bin.tar.gz \
     && mv apache-maven-3.8.5 /opt/maven \
     && rm apache-maven-3.8.5-bin.tar.gz
